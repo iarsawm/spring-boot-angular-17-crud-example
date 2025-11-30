@@ -2,7 +2,7 @@
 #  - Stage 1: build with Maven
 #  - Stage 2: run with a slim JRE
 
-FROM maven:3.9.5-openjdk-17-slim AS build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /build
 # copy maven wrapper and pom first for better caching
 COPY pom.xml mvnw .mvn/ ./

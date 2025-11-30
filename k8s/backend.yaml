@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: spring-backend
-          image: arsam/spring-boot-server:latest
+          image: backend:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,4 +43,3 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-  type: ClusterIP

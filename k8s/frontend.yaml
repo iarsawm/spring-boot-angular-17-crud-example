@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: angular-frontend
-          image: arsam/angular-17-client:latest
+          image: frontend:latest
           ports:
             - containerPort: 80
           resources:
@@ -37,4 +37,3 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-  type: ClusterIP
