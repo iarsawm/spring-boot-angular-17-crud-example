@@ -1,8 +1,13 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-nginx
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: ingress-nginx
-  namespace: arsam-app
+  namespace: ingress-nginx
 spec:
   type: LoadBalancer
   selector:
@@ -21,7 +26,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ingress-nginx-controller
-  namespace: arsam-app
+  namespace: ingress-nginx
 spec:
   replicas: 2
   selector:
@@ -34,8 +39,7 @@ spec:
     spec:
       containers:
         - name: controller
-          # Use docker.ir mirror here
-          image:  docker.ir/nginx-ingress/controller:latest
+          image: nginx/nginx-ingress:1.12.0   # <- working image
           args:
             - /nginx-ingress-controller
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
