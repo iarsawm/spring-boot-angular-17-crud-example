@@ -16,7 +16,6 @@ spec:
       protocol: TCP
       port: 443
       targetPort: 443
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,7 +35,7 @@ spec:
       containers:
         - name: controller
           # Use docker.ir mirror here
-         image: ingress-nginx/controller:latest 
+          image:  docker.ir/nginx-ingress/controller:latest
           args:
             - /nginx-ingress-controller
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
