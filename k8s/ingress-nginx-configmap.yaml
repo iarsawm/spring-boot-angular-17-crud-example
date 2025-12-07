@@ -4,4 +4,4 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx
 data:
-  enable-vts-status: "false"   # minimal required config
+  enable-vts-status: "false"
